@@ -13,6 +13,15 @@ router.get('/', async (req, res, next) => {
     }
 })
 
+router.get('/:id', async (req, res, next) => {
+    try {
+        const task = await Tasks.getById(req.params.id)
+        res.json(task)
+
+    } catch(error) {
+        next(error)
+    }
+})
 
 
  router.post('/', async (req, res, next) => {

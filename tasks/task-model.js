@@ -16,7 +16,7 @@ function getAll() {
 function getById(id) {
     return db('tasks')
         .join("projects", "projects.id", "tasks.project_id")
-        .select(".id", "tasks.task_description", "tasks.task_notes",
+        .select("tasks.id", "tasks.task_description", "tasks.task_notes",
             "tasks.completed", "projects.proj_name", "projects.proj_description")
         .where('tasks.id', id)
 }

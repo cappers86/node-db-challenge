@@ -28,7 +28,7 @@ router.post('/', async (req, res, next) => {
         const id = await Resources.add(req.body)
         res.status(200).json(await Resources.getById(id))
 
-    } catch (errpr) {
+    } catch (error) {
         next (error)
     }
 } ) 
